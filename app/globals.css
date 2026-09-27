@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+:root {
+  --bg-dark: #07080a;
+  --bg-card: #0d0f14;
+  --bg-surface: #12161f;
+  --accent-cyan: #00f0ff;
+  --accent-blue: #38bdf8;
+  --accent-indigo: #6366f1;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --text-dim: #4b5563;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(0, 240, 255, 0.25);
+}
+
+@theme {
+  --color-obsidian: #07080a;
+  --color-surface: #0d0f14;
+  --color-surface-hover: #141822;
+  --color-cyan-glow: #00f0ff;
+  --color-cyan-dim: rgba(0, 240, 255, 0.15);
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+html {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  scroll-behavior: auto; /* Handled smoothly by Lenis */
+  overflow-x: clip;
+}
+
+/* Lenis smooth scrolling rules */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+  position: relative;
+  min-height: 100vh;
+  selection-background-color: #00f0ff;
+  selection-color: #000000;
+}
+
+::selection {
+  background: #00f0ff;
+  color: #07080a;
+}
+
+/* Subtle cinematic noise overlay */
+.bg-noise {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Glow effects */
+.glow-cyan {
+  box-shadow: 0 0 35px -5px rgba(0, 240, 255, 0.35);
+}
+
+.glow-cyan-sm {
+  box-shadow: 0 0 15px 0 rgba(0, 240, 255, 0.2);
+}
+
+.glow-border {
+  border-color: rgba(0, 240, 255, 0.4);
+  box-shadow: inset 0 0 12px rgba(0, 240, 255, 0.1), 0 0 20px rgba(0, 240, 255, 0.15);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(13, 15, 20, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(18, 22, 31, 0.85);
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.12);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07080a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff;
+}
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #00f0ff;
+  outline-offset: 3px;
+}
+
+/* Cybernetic Visual Effects */
+.tech-border-beam {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-border-beam::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 60deg,
+    #00f0ff 90deg,
+    transparent 120deg,
+    transparent 360deg
+  );
+  border-radius: inherit;
+  animation: border-rotate 4s linear infinite;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+@keyframes border-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 240, 255, 0.03) 50%
+  );
+  background-size: 100% 4px;
+}
+
+/* Hide desktop custom cursor element when on touch screens or when user prefers reduced motion */
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .custom-cursor {
+    display: none !important;
+  }
+}
