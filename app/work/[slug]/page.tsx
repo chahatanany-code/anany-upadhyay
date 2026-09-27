@@ -65,27 +65,31 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center gap-4">
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#00f0ff] text-[#07080a] font-bold text-xs font-mono uppercase tracking-wider hover:shadow-[0_0_20px_#00f0ff] transition-all"
-          >
-            <GitHubIcon className="w-4 h-4" />
-            <span>VIEW SOURCE CODE</span>
-          </a>
-
           {project.liveUrl && (
             <a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 text-white font-mono text-xs border border-white/10 transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#00f0ff] text-[#07080a] font-bold text-xs font-mono uppercase tracking-wider hover:shadow-[0_0_25px_#00f0ff] hover:scale-105 active:scale-95 transition-all"
             >
-              <span>DEMO REPO</span>
-              <ExternalLink className="w-4 h-4 text-zinc-400" />
+              <ExternalLink className="w-4 h-4" />
+              <span>LAUNCH LIVE APPLICATION</span>
             </a>
           )}
+
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-mono text-xs uppercase tracking-wider transition-all ${
+              project.liveUrl
+                ? "bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-white/25"
+                : "bg-[#00f0ff] text-[#07080a] font-bold hover:shadow-[0_0_20px_#00f0ff]"
+            }`}
+          >
+            <GitHubIcon className="w-4 h-4" />
+            <span>VIEW SOURCE CODE</span>
+          </a>
         </div>
       </div>
 

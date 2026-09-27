@@ -54,8 +54,8 @@ export const projects: ProjectItem[] = [
       "Overcoming CPU thermal throttling during sustained live video streams required optimizing frame buffering and downsampling without sacrificing classification accuracy.",
     learnings:
       "Deepened practical understanding of memory layout in NumPy/OpenCV, tensor batching, and decoupling inference loops from UI presentation layers.",
-    githubUrl: "https://github.com/chahatanany-code/neural-vision-edge",
-    liveUrl: "https://github.com/chahatanany-code/neural-vision-edge",
+    githubUrl: "https://github.com/chahatanany-code/neuralvision",
+    liveUrl: "https://neuralvision-nine.vercel.app/",
     imageUrl: "/images/project-neural-vision.jpg",
     accentColor: "#00f0ff",
     stats: [
@@ -102,7 +102,6 @@ export const projects: ProjectItem[] = [
     learnings:
       "Mastered audio buffer scheduling, hardware clock synchronization, and designing interfaces for high-stress physical environments.",
     githubUrl: "https://github.com/chahatanany-code/kinetic-core-athletics",
-    liveUrl: "https://github.com/chahatanany-code/kinetic-core-athletics",
     imageUrl: "/images/project-kinetic-core.jpg",
     accentColor: "#38bdf8",
     stats: [
@@ -149,7 +148,6 @@ export const projects: ProjectItem[] = [
     learnings:
       "Gained deep intuition for vector space topology, dimensionality reduction, and bridging raw Python machine learning scripts with interactive web frontends.",
     githubUrl: "https://github.com/chahatanany-code/synapse-vector-archive",
-    liveUrl: "https://github.com/chahatanany-code/synapse-vector-archive",
     imageUrl: "/images/project-synapse-archive.jpg",
     accentColor: "#818cf8",
     stats: [
@@ -196,7 +194,6 @@ export const projects: ProjectItem[] = [
     learnings:
       "Mastered 3D projective geometry, WebGL buffer allocation, and coordinating GSAP timelines with Three.js requestAnimationFrame loops.",
     githubUrl: "https://github.com/chahatanany-code/nexus-spatial-engine",
-    liveUrl: "https://github.com/chahatanany-code/nexus-spatial-engine",
     imageUrl: "/images/project-nexus-engine.jpg",
     accentColor: "#22d3ee",
     stats: [
